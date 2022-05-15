@@ -8,15 +8,23 @@ $v-d-blue-card: hsl(216, 50%, 16%);
 $v-d-blue-line: hsl(215, 32%, 27%);
 $white: hsl(0, 0%, 100%);
 
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin image-size {
+  width: 17rem;
+  height: 17rem;
+}
 
 body {
   background-color: $v-d-blue-main;
   font-family: 'Outfit', sans-serif;
-  display: flex;
+  @include flex-center;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
 
   p {
@@ -33,16 +41,42 @@ body {
     color: $soft-blue;
     font-weight: 300;
     line-height: 150%;
+    box-shadow: 0 32px 0 16px rgba(0, 0, 0, 0.1), 0 24px 0 48px rgba(0, 0, 0, 0.025);
 
-    .image {
-      width: 17rem;
+    .container-image {
       border-radius: 0.5rem;
+
+      .image {
+        position: absolute;
+        @include image-size;
+        border-radius: 0.5rem;
+      }
+
+      .image-eye {
+        @include flex-center;
+        @include image-size;
+        border-radius: 0.5rem;
+        background-color: hsla(178, 100%, 50%, 0.6);
+        opacity: 0;
+      }
+
+      .image-eye:hover {
+        mix-blend-mode: lighten;
+        cursor: pointer;
+        opacity: 1;
+      }
     }
 
     .title {
+      position: relative;
       color: $white;
       font-weight: 600;
       font-size: 20px;
+    }
+
+    .title:hover {
+      color: $cyan;
+      cursor: pointer;
     }
 
     .price-time {
@@ -53,8 +87,7 @@ body {
 
       #price {
         color: $cyan;
-        display: flex;
-        align-items: center;
+        @include flex-center;
         font-weight: 400;
 
         #price-img {
@@ -63,8 +96,7 @@ body {
       }
 
       #time {
-        display: flex;
-        align-items: center;
+        @include flex-center;
 
         #time-img {
           margin-right: 0.5rem;
@@ -77,8 +109,8 @@ body {
     }
 
     .credits {
-      display: flex;
-      align-items: center;
+      @include flex-center;
+      justify-content: flex-start;
       margin-top: 1rem;
       font-size: 14px;
 
@@ -92,6 +124,11 @@ body {
       #author {
         color: $white;
         font-weight: 400;
+      }
+
+      #author:hover {
+        color: $cyan;
+        cursor: pointer;
       }
     }
   }

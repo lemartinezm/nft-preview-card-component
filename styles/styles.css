@@ -5,17 +5,17 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
   margin: 0;
 }
 
@@ -34,17 +34,54 @@ body .container {
   color: #8bacda;
   font-weight: 300;
   line-height: 150%;
+  -webkit-box-shadow: 0 32px 0 16px rgba(0, 0, 0, 0.1), 0 24px 0 48px rgba(0, 0, 0, 0.025);
+          box-shadow: 0 32px 0 16px rgba(0, 0, 0, 0.1), 0 24px 0 48px rgba(0, 0, 0, 0.025);
 }
 
-body .container .image {
-  width: 17rem;
+body .container .container-image {
   border-radius: 0.5rem;
 }
 
+body .container .container-image .image {
+  position: absolute;
+  width: 17rem;
+  height: 17rem;
+  border-radius: 0.5rem;
+}
+
+body .container .container-image .image-eye {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 17rem;
+  height: 17rem;
+  border-radius: 0.5rem;
+  background-color: rgba(0, 255, 247, 0.6);
+  opacity: 0;
+}
+
+body .container .container-image .image-eye:hover {
+  mix-blend-mode: lighten;
+  cursor: pointer;
+  opacity: 1;
+}
+
 body .container .title {
+  position: relative;
   color: white;
   font-weight: 600;
   font-size: 20px;
+}
+
+body .container .title:hover {
+  color: #00fff7;
+  cursor: pointer;
 }
 
 body .container .price-time {
@@ -63,6 +100,9 @@ body .container .price-time #price {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -77,6 +117,9 @@ body .container .price-time #time {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -94,9 +137,15 @@ body .container .credits {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   margin-top: 1rem;
   font-size: 14px;
 }
@@ -111,5 +160,10 @@ body .container .credits #avatar {
 body .container .credits #author {
   color: white;
   font-weight: 400;
+}
+
+body .container .credits #author:hover {
+  color: #00fff7;
+  cursor: pointer;
 }
 /*# sourceMappingURL=styles.css.map */
