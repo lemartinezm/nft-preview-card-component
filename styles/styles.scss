@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,200;1,6..72,300;1,6..72,400;1,6..72,500;1,6..72,600;1,6..72,700;1,6..72,800&family=Outfit:wght@300;400;600&display=swap');
+
+// Variables
+$soft-blue: hsl(215, 51%, 70%);
+$cyan: hsl(178, 100%, 50%);
+$v-d-blue-main: hsl(217, 54%, 11%);
+$v-d-blue-card: hsl(216, 50%, 16%);
+$v-d-blue-line: hsl(215, 32%, 27%);
+$white: hsl(0, 0%, 100%);
+
+
+body {
+  background-color: $v-d-blue-main;
+  font-family: 'Outfit', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+
+  p {
+    margin: 0;
+  }
+
+  .container {
+    background-color: $v-d-blue-card;
+    width: 20rem;
+    height: 34rem;
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    color: $soft-blue;
+    font-weight: 300;
+    line-height: 150%;
+
+    .image {
+      width: 17rem;
+      border-radius: 0.5rem;
+    }
+
+    .title {
+      color: $white;
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    .price-time {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      justify-content: space-between;
+      margin: 1rem 0;
+
+      #price {
+        color: $cyan;
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+
+        #price-img {
+          margin-right: 0.5rem;
+        }
+      }
+
+      #time {
+        display: flex;
+        align-items: center;
+
+        #time-img {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+
+    #separation-line {
+      border: 1px solid $soft-blue;
+    }
+
+    .credits {
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+      font-size: 14px;
+
+      #avatar {
+        width: 2rem;
+        border: 1px solid $white;
+        border-radius: 50%;
+        margin-right: 1rem;
+      }
+
+      #author {
+        color: $white;
+        font-weight: 400;
+      }
+    }
+  }
+}
